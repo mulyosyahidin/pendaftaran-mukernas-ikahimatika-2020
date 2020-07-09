@@ -1,0 +1,12 @@
+public function show($id) {
+        $registrant = Registrant::findOrFail($id);
+        $recomendation_letter = $registrant->user->media[0]->getUrl();
+        $recomendation_letter = str_replace('storage', 'storage/app/public', $recomendation_letter);
+        $recomendation_letter = str_replace('2020/', '', $recomendation_letter);
+        
+        $register_form = $registrant->user->media[1]->getUrl();
+        $register_form = str_replace('storage', 'storage/app/public', $register_form);
+        $register_form = str_replace('2020/', '', $register_form);
+
+        return view('admin.registrant.show', compact('registrant', 'recomendation_letter', 'register_form'));
+    }
