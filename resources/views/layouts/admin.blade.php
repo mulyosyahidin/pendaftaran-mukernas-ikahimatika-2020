@@ -84,7 +84,7 @@
               <a href="{{ route('admin.home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Pendaftaran Peserta</li>
-            <li class="nav-item{{ __active('RegistrantController', ['index', 'show']) }}">
+            <li class="nav-item{{ __active('RegistrantController', ['index', 'show', 'edit']) }}">
               <a href="{{ route('admin.reg.all') }}" class="nav-link"><i class="fas fa-columns"></i>
                 <span>Data Pendaftaran</span></a>
             </li>

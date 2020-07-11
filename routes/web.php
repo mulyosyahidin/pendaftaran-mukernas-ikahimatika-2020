@@ -54,8 +54,8 @@ Route::group(['middleware' => ['role:admin']], function () {
             Route::put('/{id}/decline', 'Admin\RegistrantController@decline')->name('admin.reg.decline');
             Route::put('/{id}/mark-as-payed', 'Admin\RegistrantController@payed')->name('admin.reg.mark-as-payed');
 
-            Route::get('/{id}/edit', 'Admin\RegistrantController@edit')->name('admin.reg.edit');
-            Route::put('/{id}/edit', 'Admin\RegistrantController@update')->name('admin.reg.update');
+            Route::get('/{registrant}/edit', 'Admin\RegistrantController@edit')->name('admin.reg.edit');
+            Route::put('/{registrant}/edit', 'Admin\RegistrantController@update')->name('admin.reg.update');
             Route::delete('/{id}/delete', 'Admin\RegistrantController@destroy')->name('admin.reg.destroy');
         });
     });

@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Registrant;
+use App\Models\University;
+use App\Models\Organization;
+use App\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class RegistrantController extends Controller
 {
@@ -87,5 +91,68 @@ class RegistrantController extends Controller
         return redirect()
             ->to(route('admin.reg.display', $reg_status))
             ->withSuccess('Data pendaftaran peserta berhasil dihapus');
+    }
+
+    public function edit(Registrant $registrant)
+    {
+        $universities = University::orderBy('name', 'ASC')->get();
+        $organizations = Organization::orderBy('name', 'ASC')->get();
+
+        return view('admin.registrant.edit', compact('registrant', 'universities', 'organizations'));
+    }
+
+    public function update(Request $request, Registrant $registrant)
+    {
+        $request->validate([
+            'name' => 'required|min:4|max:64',
+            'nim' => 'required|min:6|max:32',
+            'whatsapp_number' => 'required|min:9|max:15',
+            'phone_number' => 'required|min:9|max:15',
+            'picture' => 'nullable|max:2048|mimes:jpg,jpeg,png',
+            'email' => 'nullable|email:filter',
+            'password' => 'nullable|min:6',
+            'region_id' => 'required|numeric',
+            'university_id' => 'required|numeric',
+            'organization_id' => 'required|numeric',
+        ]);
+
+        $user = User::findOrFail($registrant->user->id);
+        $user->name = $request->name;
+
+        if ($request->email !== '') {
+            $user->email = $request->email;
+        }
+
+        if ($request->password === '') {
+            $password = $registrant->user->password;
+        }
+        else {
+            $password = Hash::make($request->password);
+        }
+        $user->password = $password;
+
+        $user->save();
+
+        $registrant->nim = $request->nim;
+        $registrant->phone_number = $request->phone_number;
+        $registrant->whatsapp_number = $request->whatsapp_number;
+        $registrant->region_id = $request->region_id;
+        $registrant->university_id = $request->university_id;
+        $registrant->organization_id = $request->organization_id;
+        
+        $registrant->save();
+
+        if ($request->hasFile('picture') && $request->file('picture')->isValid()) {
+            if (isset($user->media[1])) {
+                $user->media[1]->delete();
+            }
+
+            $user->addMediaFromRequest('picture')
+                ->toMediaCollection('registrant_picture');
+        }
+
+        return redirect()
+            ->to(route('admin.reg.show', $registrant->id))
+            ->withSuccess('Berhasil menyimpan data pendaftaran peserta');
     }
 }
