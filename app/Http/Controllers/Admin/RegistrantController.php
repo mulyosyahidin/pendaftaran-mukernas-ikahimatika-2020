@@ -20,24 +20,14 @@ class RegistrantController extends Controller
         return view('admin.registrant.show', compact('registrant'));
     }
 
-    public function verify_file()
+    public function display($reg_status)
     {
-        return view('admin.registrant.to-verify');
-    }
+        $statuses = [1, 2, 3, 4];
 
-    public function verify_payment()
-    {
-        return view('admin.registrant.verify-payment');
-    }
-
-    public function finished()
-    {
-        return view('admin.registrant.finished');
-    }
-
-    public function failed()
-    {
-        return view('admin.registrant.failed');
+        if (in_array($reg_status, $statuses))
+        {
+            return view('admin.registrant.status-'. $reg_status);
+        }
     }
 
     public function accept($id)
@@ -82,5 +72,20 @@ class RegistrantController extends Controller
     public function export()
     {
         return view('admin.registrant.export');
+    }
+
+    public function destroy($id)
+    {
+        $registrant = Registrant::findOrFail($id);
+        $reg_status = $registrant->registration_status;
+
+        $registrant->user->media[0]->delete();
+        $registrant->user->media[1]->delete();
+
+        $registrant->delete();
+
+        return redirect()
+            ->to(route('admin.reg.display', $reg_status))
+            ->withSuccess('Data pendaftaran peserta berhasil dihapus');
     }
 }

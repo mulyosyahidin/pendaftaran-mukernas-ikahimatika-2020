@@ -5,11 +5,11 @@
 <div class="main-content">
     <section class="section">
       <div class="section-header">
-        <h1>Verifikasi Berkas</h1>
+        <h1>Menunggu Verifikasi Berkas</h1>
         <div class="section-header-breadcrumb">
           <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
-          <div class="breadcrumb-item active"><a href="{{ route('admin.reg.all') }}">Pendaftar</a></div>
-          <div class="breadcrumb-item">Verifikasi Berkas</div>
+          <div class="breadcrumb-item active"><a href="{{ route('admin.reg.all') }}">Pendaftaran Peserta</a></div>
+          <div class="breadcrumb-item">Menunggu Verifikasi Berkas</div>
         </div>
       </div>
 
@@ -26,7 +26,7 @@
           <div class="col-12">
               <div class="card">
                   <div class="card-header">
-                      <h5 class="card-title">Data Pendaftaran</h5>
+                      <h5 class="card-title">Data Pendaftaran Peserta</h5>
                   </div>
                   <div class="table-responsive">
                       <table class="table table-striped table-hover" id="to-verify-table">

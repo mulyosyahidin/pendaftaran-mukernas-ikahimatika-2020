@@ -1,14 +1,14 @@
 @extends('layouts.admin')
-@section('title', 'Semua Pendaftar')
+@section('title', 'Pendaftaran Peserta')
 
 @section('content')
 <div class="main-content">
     <section class="section">
       <div class="section-header">
-        <h1>Semua Pendaftar</h1>
+        <h1>Pendaftaran Peserta</h1>
         <div class="section-header-breadcrumb">
           <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
-          <div class="breadcrumb-item">Semua Pendaftar</div>
+          <div class="breadcrumb-item">Pendaftaran Peserta</div>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
           <div class="col-12">
               <div class="card">
                   <div class="card-header">
-                      <h5 class="card-title">Data Pendaftaran</h5>
+                      <h5 class="card-title">Semua Peserta Terdaftar</h5>
                   </div>
                   <div class="table-responsive">
                       <table class="table table-striped table-hover" id="all-table">

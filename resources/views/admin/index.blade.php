@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Pendaftar Hari Ini</h4>
+                            <h4>Hari Ini</h4>
                         </div>
                         <div class="card-body">
                             {{ $registrantToday }}
@@ -60,7 +60,7 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Total Pendaftar</h4>
+                            <h4>Semua Peserta</h4>
                         </div>
                         <div class="card-body">
                             {{ $totalRegistrant }}
@@ -73,12 +73,12 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Jumlah Pendaftar</h4>
+                        <h4>Jumlah Peserta</h4>
                     </div>
                     <div class="card-body p-0">
                         <ul class="list-group">
                           <li class="list-group-item border-top-0">
-                            Semua Pendaftar
+                            Semua Peserta
                             <span class="badge float-right badge-primary">{{ $totalRegistrant }}</span>
                           </li>
                           <li class="list-group-item border-top-0">

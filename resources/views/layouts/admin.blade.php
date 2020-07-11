@@ -83,26 +83,26 @@
             <li class="nav-item{{ __active('AdminController', 'index') }}">
               <a href="{{ route('admin.home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
-            <li class="menu-header">Pendaftaran</li>
+            <li class="menu-header">Pendaftaran Peserta</li>
             <li class="nav-item{{ __active('RegistrantController', ['index', 'show']) }}">
               <a href="{{ route('admin.reg.all') }}" class="nav-link"><i class="fas fa-columns"></i>
                 <span>Data Pendaftaran</span></a>
             </li>
-            <li class="nav-item{{ __active('RegistrantController', 'verify_file') }}">
-              <a class="nav-link" href="{{ route('admin.reg.verify') }}"><i class="fas fa-file-pdf"></i>
+            <li class="nav-item{{ __active('RegistrantController', 'display', '|1') }}">
+              <a class="nav-link" href="{{ route('admin.reg.display', 1) }}"><i class="fas fa-file-pdf"></i>
                 <span>Verifikasi Berkas</span></a></li>
-            <li class="nav-item{{ __active('RegistrantController', 'verify_payment') }}">
-              <a class="nav-link " href="{{ route('admin.reg.payment') }}"><i class="fas fa-credit-card"></i>
+            <li class="nav-item{{ __active('RegistrantController', 'display', '|2') }}">
+              <a class="nav-link " href="{{ route('admin.reg.display', 2) }}"><i class="fas fa-credit-card"></i>
                 <span>Verifikasi Pembayaran</span></a></li>
-            <li class="nav-item{{ __active('RegistrantController', 'finished') }}">
-              <a class="nav-link" href="{{ route('admin.reg.finished') }}"><i class="fas fa-check"></i>
+            <li class="nav-item{{ __active('RegistrantController', 'display', '|3') }}">
+              <a class="nav-link" href="{{ route('admin.reg.display', 3) }}"><i class="fas fa-check"></i>
                 <span>Pendaftaran Selesai</span></a></li>
-            <li class="nav-item{{ __active('RegistrantController', 'failed') }}">
-                  <a class="nav-link" href="{{ route('admin.reg.failed') }}"><i class="fas fa-times"></i>
+            <li class="nav-item{{ __active('RegistrantController', 'display', '|4') }}">
+                  <a class="nav-link" href="{{ route('admin.reg.display', 4) }}"><i class="fas fa-times"></i>
                     <span>Pendaftaran Gagal</span></a></li>
             <li class="nav-item{{ __active('RegistrantController', 'export') }}">
               <a href="{{ route('admin.reg.export') }}" class="nav-link"><i class="fas fa-file-excel"></i>
-                <span>Export Data</span>
+                <span>Ekspor Data</span>
               </a>
             </li>
 
@@ -125,7 +125,7 @@
             </li>
             <li class="nav-item{{ __active('SettingController', 'contacts') }}">
               <a class="nav-link" href="{{ route('admin.settings.contacts') }}"><i class="fas fa-phone"></i>
-                <span>Kontak Pendaftaran</span></a></li>
+                <span>Kontak Peserta</span></a></li>
           </ul>
         </aside>
       </div>

@@ -96,25 +96,37 @@ if (!function_exists('isAction')) {
 }
 
 if (!function_exists('__active')) {
-    function __active($controller = '', $action = '')
+    function __active($controller = '', $action = '', $param = '')
     {
+        $phpSelf = $_SERVER['PHP_SELF'];
+
         if ($controller === '' && $action === '') {
             return ' active';
-        } else if (is_array($controller) && count($controller)) {
+        }
+        else if ($param !== '') {
+            if (isController($controller) && isAction($action)) {
+                if (strpos($phpSelf, $param) !== FALSE) {
+                    return ' active';
+                }
+            }
+        }
+        else if (is_array($controller) && count($controller)) {
             foreach ($controller as $c) {
                 if (isController($c)) {
                     return ' active';
                     break;
                 }
             }
-        } else if (is_array($action) && count($action) > 0) {
+        }
+        else if (is_array($action) && count($action) > 0) {
             foreach ($action as $method) {
                 if (isController($controller) && isAction($method)) {
                     return ' active';
                     break;
                 }
             }
-        } else if (isController($controller) && isAction($action)) {
+        }
+        else if (isController($controller) && isAction($action)) {
             return ' active';
         }
     }

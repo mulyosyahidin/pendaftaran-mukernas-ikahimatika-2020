@@ -8,7 +8,7 @@
             <h1>{{ $registrant->user->name }}</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="{{ route('admin.reg.all') }}">Data Pendaftaran</a></div>
+                <div class="breadcrumb-item"><a href="{{ route('admin.reg.all') }}">Data Peserta</a></div>
                 <div class="breadcrumb-item">{{ $registrant->user->name }}</div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                                     <td><b>{{ $registrant->whatsapp_number }}</b></td>
                                 </tr>
                                 <tr>
-                                    <td>Status Pendaftaran</td>
+                                    <td>Status Peserta</td>
                                     <td><b>{{ $registrant->status->name }}</b></td>
                                 </tr>
                                 <tr>
@@ -58,6 +58,13 @@
                                     </td>
                                 </tr>
                             </table>
+                        </div>
+                        <div class="card-footer text-right">
+                            <a href="{{ route('admin.reg.edit', $registrant->id) }}"
+                                class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                            <a href="#"
+                                data-toggle="modal" data-target="#delete-modal"
+                                class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -119,7 +126,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title">File Pendaftaran</h5>
+                            <h5 class="card-title">File Peserta</h5>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
@@ -135,14 +142,14 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title">Verifikasi Pendaftaran</h5>
+                            <h5 class="card-title">Verifikasi Peserta</h5>
                         </div>
 
                         @if ($registrant->status->id == 1)
                         <div class="card-body">
                             <p>
                                 Status pendaftaran saat ini: <b>{{ $registrant->status->name }}</b>.
-                                Silahkan download file <b>Surat Rekomendasi</b> dan <b>Form Pendaftaran</b> kemudian
+                                Silahkan download file <b>Surat Rekomendasi</b> dan <b>Form Peserta</b> kemudian
                                 lakukan
                                 verifikasi.
                                 <br>
@@ -172,7 +179,7 @@
                         </div>
                         @elseif ($registrant->status->id == 3)
                         <div class="card-footer">
-                            <p>Pendaftaran telah berhasil.</p>
+                            <p>Peserta telah berhasil.</p>
                         </div>
                         <div class="card-footer text-center">
                             <a href="#" data-toggle="modal" data-target="#send-message-modal"
@@ -189,12 +196,41 @@
 @endsection
 
 @section('custom_html')
+<div class="modal fade" tabindex="-1" role="dialog" id="delete-modal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Hapus Data Pendaftaran Peserta?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('admin.reg.destroy', $registrant->id) }}" method="POST" id="accept-form">
+                <input type="hidden" name="_method" value="DELETE">
+                @csrf
+
+                <div class="modal-body">
+                    <p>
+                        Ingin menghapus data pendaftaran?
+                        <br>
+                        Semua data terkait seperti file yang diunggah dan foto juga akan dihapus
+                    </p>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 @if ($registrant->status->id == 1)
 <div class="modal fade" tabindex="-1" role="dialog" id="accept-modal">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Verifikasi Pendaftaran</h5>
+                <h5 class="modal-title">Verifikasi Peserta</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -224,7 +260,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Verifikasi Pendaftaran</h5>
+                <h5 class="modal-title">Verifikasi Peserta</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -251,7 +287,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tandai Pendaftaran Sebagai Sudah Dibayar?</h5>
+                <h5 class="modal-title">Tandai Peserta Sebagai Sudah Dibayar?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -302,6 +338,7 @@
 @endsection
 
 @push('custom_js')
+<script src="{{ getPluginUri('ViewerJS/pdf.js') }}"></script>
 <script>
     @if($registrant->status-> id == 2)
     let form = document.querySelector('#send-payment-message');

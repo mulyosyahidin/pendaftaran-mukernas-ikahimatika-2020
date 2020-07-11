@@ -44,17 +44,19 @@ Route::group(['middleware' => ['role:admin']], function () {
 
         Route::prefix('registrant')->group(function () {
             Route::get('/', 'Admin\RegistrantController@index')->name('admin.reg.all');
-            Route::get('/data/{id}', 'Admin\RegistrantController@show')->name('admin.reg.show');
-            Route::put('/accept/{id}', 'Admin\RegistrantController@accept')->name('admin.reg.accept');
-            Route::put('/decline/{id}', 'Admin\RegistrantController@decline')->name('admin.reg.decline');
-            Route::put('/mark-as-payed/{id}', 'Admin\RegistrantController@payed')->name('admin.reg.mark-as-payed');
-            Route::get('/to-verify', 'Admin\RegistrantController@verify_file')->name('admin.reg.verify');
-            Route::get('/verify-payment', 'Admin\RegistrantController@verify_payment')->name('admin.reg.payment');
-            Route::get('/finished', 'Admin\RegistrantController@finished')->name('admin.reg.finished');
-            Route::get('/failed', 'Admin\RegistrantController@failed')->name('admin.reg.failed');
+            Route::get('/status|{status}', 'Admin\RegistrantController@display')->name('admin.reg.display');
 
             Route::get('/export', 'Admin\RegistrantController@export')->name('admin.reg.export');
             Route::post('/export', 'Admin\RegistrantController@export_data')->name('admin.reg.export-data');
+
+            Route::get('/{id}', 'Admin\RegistrantController@show')->name('admin.reg.show');
+            Route::put('/{id}/accept', 'Admin\RegistrantController@accept')->name('admin.reg.accept');
+            Route::put('/{id}/decline', 'Admin\RegistrantController@decline')->name('admin.reg.decline');
+            Route::put('/{id}/mark-as-payed', 'Admin\RegistrantController@payed')->name('admin.reg.mark-as-payed');
+
+            Route::get('/{id}/edit', 'Admin\RegistrantController@edit')->name('admin.reg.edit');
+            Route::put('/{id}/edit', 'Admin\RegistrantController@update')->name('admin.reg.update');
+            Route::delete('/{id}/delete', 'Admin\RegistrantController@destroy')->name('admin.reg.destroy');
         });
     });
 });

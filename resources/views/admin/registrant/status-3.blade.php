@@ -1,15 +1,15 @@
 @extends('layouts.admin')
-@section('title', 'Pendaftaran Gagal')
+@section('title', 'Pendaftaran Selesai')
 
 @section('content')
 <div class="main-content">
     <section class="section">
       <div class="section-header">
-        <h1>Pendaftaran Gagal</h1>
+        <h1>Pendaftaran Selesai</h1>
         <div class="section-header-breadcrumb">
           <div class="breadcrumb-item active"><a href="{{ route('admin.home') }}">Dashboard</a></div>
-          <div class="breadcrumb-item active"><a href="{{ route('admin.reg.all') }}">Pendaftar</a></div>
-          <div class="breadcrumb-item">Pendaftaran Gagal</div>
+          <div class="breadcrumb-item active"><a href="{{ route('admin.reg.all') }}">Pendaftaran Peserta</a></div>
+          <div class="breadcrumb-item">Pendaftaran Selesai</div>
         </div>
       </div>
 
@@ -19,7 +19,7 @@
                 {{ Session::get('success') }}
             </h2>
         @else
-            <p>Pendaftar yang berkasnya gagal diverifikasi (data tidak sesuai)</p>
+            <p>Pendaftar yang berkasnya sudah diverifikasi dan sudah dikonfirmasi pembayarannya.</p>
         @endif
 
         <div class="row">
@@ -62,7 +62,7 @@
         "processing": true,
         "serverSide": false,
         "ajax": {
-            "url": "{{ route('registrants-data.index') }}?status=4",
+            "url": "{{ route('registrants-data.index') }}?status=3",
             "headers": {
                 "Authorization": "Bearer {{ Session::get('Bearer_token') }}"
             }
