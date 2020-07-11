@@ -196,9 +196,11 @@
                         option.setAttribute('value', regions.data[region].id);
                         option.append(regions.data[region].name);
 
+                        @if (is_numeric($registrant->region_id))
                         if (regions.data[region].id == {{ $registrant->region_id }}) {
                             option.setAttribute('selected', 'selected');
                         }
+                        @endif
 
                     regionOptions.append(option);
                 }

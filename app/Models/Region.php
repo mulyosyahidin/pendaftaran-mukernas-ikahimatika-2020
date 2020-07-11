@@ -15,4 +15,9 @@ class Region extends Model
     {
         return $this->belongsTo('App\Models\Registrant');
     }
+
+    public function registrant_custom_region()
+    {
+        return $this->belongsTo('App\Models\Registrant_custom_university');
+    }
 }

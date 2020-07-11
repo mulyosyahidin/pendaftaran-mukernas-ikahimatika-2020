@@ -68,7 +68,7 @@
                                     @if (isset($registrant->region->name) && $registrant->region->name !== '')
                                         {{ $registrant->region->name }}
                                     @else
-                                        -
+                                        {{ $registrant->custom->region->name }}
                                     @endif
                                 </b></td>
                             </tr>

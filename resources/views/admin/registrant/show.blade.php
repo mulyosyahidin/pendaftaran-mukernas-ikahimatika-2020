@@ -71,17 +71,6 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title">Foto</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="text-center">
-                                <img src="{{ $registrant->user->media[1]->getFullUrl() }}" alt="{{ $registrant->user->name }}" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
                             <h5 class="card-title">Himpunan</h5>
                         </div>
                         <div class="table-responsive">
@@ -92,7 +81,7 @@
                                         @if (isset($registrant->region->name) && $registrant->region->name !== '')
                                             {{ $registrant->region->name }}
                                         @else
-                                            -
+                                            {{ $registrant->custom->region->name }}
                                         @endif
                                     </b></td>
                                 </tr>
@@ -118,6 +107,21 @@
                                 </tr>
                             </table>
                         </div>
+                        @if ( ! isset($registrant->region->name))
+                        <div class="card-footer">
+                            <p>
+                                Peserta <b>{{ $registrant->user->name }}</b> menandai bahwa <b>{{ $registrant->custom->organization_name }}
+                                    {{ $registrant->custom->university_name }}</b> tidak ada dalam <i>list</i> saat pendaftaran.
+                            </p>
+                            <p>
+                                Silahkan tambahkan {{ $registrant->custom->organization_name }} {{ $registrant->custom->university_name }}
+                                ke database. (<a target="_blank" href="{{ route('admin.university') }}">Tambahkan</a>)
+                            </p>
+                            <p>
+                                Setelah menambah, edit data peserta dan perbarui data himpunan.
+                            </p>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -133,6 +137,12 @@
                                 <tr>
                                     <td>Surat Delegasi</td>
                                     <td><a href="{{ $registrant->user->media[0]->getFullUrl() }}">Download File</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Foto</td>
+                                    <td>
+                                        <a href="{{ $registrant->user->media[1]->getFullUrl() }}">Lihat Foto</a>
+                                    </td>
                                 </tr>
                             </table>
                         </div>

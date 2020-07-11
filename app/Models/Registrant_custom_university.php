@@ -12,4 +12,9 @@ class Registrant_custom_university extends Model
     {
         return $this->belongsTo('App\Models\Registrant');
     }
+
+    public function region()
+    {
+        return $this->hasOne('App\Models\Region', 'id', 'region_id');
+    }
 }

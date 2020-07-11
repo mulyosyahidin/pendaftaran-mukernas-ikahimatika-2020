@@ -8,6 +8,7 @@ use App\Models\Registrant;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Bank;
 use App\Models\Contact;
+use App\Models\Registrant_custom_university;
 
 class RegistrantController extends Controller
 {

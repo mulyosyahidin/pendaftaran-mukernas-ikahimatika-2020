@@ -248,6 +248,10 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
+                            <label for="reg_id">Wilayah:</label>
+                            <select name="custom[region_id]" id="reg_id" class="form-control"></select>
+                        </div>
+                        <div class="form-group">
                             <label for="univ_name">Nama Universitas:</label>
                             <input type="text" class="form-control" id="univ_name" name="custom[university_name]">
                         </div>
@@ -291,6 +295,7 @@
         });
 
         let regionOptions = document.querySelector('#region');
+        let regionCustomOptions = document.querySelector('#reg_id');
         let universityMessageContainer = document.querySelector('.university-message-container');
         let himpunanContainer = document.querySelector('.himpunan-message-container');
 
@@ -303,7 +308,15 @@
                         option.append(d.name);
 
                     regionOptions.append(option);
-                })
+                });
+
+                res.data.forEach(d => {
+                    let option = document.createElement('option');
+                        option.setAttribute('value', d.id);
+                        option.append(d.name);
+
+                    regionCustomOptions.append(option);
+                });
             })
             .catch(errors => {
                 console.log(errors);

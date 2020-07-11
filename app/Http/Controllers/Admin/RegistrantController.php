@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Registrant;
 use App\Models\University;
 use App\Models\Organization;
+use App\Models\Registrant_custom_university as Custom;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -132,6 +133,11 @@ class RegistrantController extends Controller
         $user->password = $password;
 
         $user->save();
+
+        if (isset($registrant->custom->id)) {
+            $custom = Custom::findOrFail($registrant->custom->id);
+            $custom->delete();
+        }
 
         $registrant->nim = $request->nim;
         $registrant->phone_number = $request->phone_number;

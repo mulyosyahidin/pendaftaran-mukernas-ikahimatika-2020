@@ -145,6 +145,7 @@ class RegisterController extends Controller
                 $registrantCustom = new Custom;
 
                 $registrantCustom->registrant_id = $registrant_id;
+                $registrantCustom->region_id = $custom['region_id'];
                 $registrantCustom->university_name = $custom['university_name'];
                 $registrantCustom->organization_name = $custom['organization_name'];
 
