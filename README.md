@@ -1,79 +1,13 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## IKAHIMATIKA
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+IKAHIMATIKA merupakan satu-satunya organisasi mahasiswa matematika se-Indonesia sesuai dengan AD/ART. Organisasi ini berawal dari itikad baik rekan-rekan mahasiswa pendidikan matematika yang ada di Indonesia yang memiliki tujuan bersama dan sebagai wadah silaturahmi anggota-anggotanya, maka pada tahun 1989 dibentuk organisasi dengan nama IKAHIMAPTIKA ( Ikatan Himpunan Mahasiswa Pendidikan Matematika ) Indonesia.
 
-## About Laravel
+Seiring berjalannya waktu dan semakin bertambahnya jumlah anggota serta banyaknya organisasi mahasiswa matematika non kependidikan yang bergabung, maka pada tahun 1998 IKAHIMAPTIKA berubah menjadi IKAHIMATIKA ( Ikatan Himpunan Mahasiswa Matematika ) Indonesia agar dapat melingkupi/mencakup seluruh anggotanya. Akan tetapi setelah tahun 1998 IKAHIMATIKA seakan-akan tenggelam, hal ini disebabkan karena pada saat itu di negara Indonesia sedang terjadi reformasi besar-besaran. Akhirnya pada tahun 2001 berkat antusias anggota-anggotanya IKAHIMATIKA mengadakan Kongres Nasional di UNIBRAW Malang dan mulai saat itu IKAHIMATIKA mulai muncul ke permukaan dangan beberapa perubahan-perubahan yang terjadi di dalamnya.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+IKAHIMATIKA sebagai organisasi yang profesional, ilmiah dan independent memiliki bermacam-macam tujuan. Akan tetapi tujuan-tujuan tersebut mengacu pada keprofesian matematika itu sendiri. Hingga saat ini nama IKAHIMATIKA sudah cukup dikenal di masyarakat, meskipun belum memberikan kontribusi yang besar bagi bangsa Indonesia. Dengan jumlah anggota lebih dari 80 organisasi matematika perguruan tinggi yang ada di Indonesia yang dipimpin seorang sekretaris jendral ( Sekjen ), memiliki tujuan mulia yaitu menggalang organisasi mahasiswa matematika di seluruh Indonesia untuk mengembangkan wawasan mahasiswa dan membangun kultur tentang kematematikaan. IKAHIMATIKA akan terus berupaya dengan loyalitas anggotanya dan program kerja yang disusun untuk memberikan kontribusi yang besar bagi masyarakat Indonesia.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## MUKERNAS IKAHIMATIKA 16
+Mukernas IKAHIMATIKA ke-16 dilaksanakan pada tahun 2020 dengan tuan rumah Himpunan Mahasiswa Matematika dan Sains Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA) Universitas Bengkulu.
+Pendaftaran peserta dilakukan secara online melalui website (https://mukernasikahimatika.my.id/)[https://mukernasikahimatika.my.id/]
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Repo ini merupakan sistem informasi yang digunakan web tersebut.
