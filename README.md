@@ -8,6 +8,6 @@ IKAHIMATIKA sebagai organisasi yang profesional, ilmiah dan independent memiliki
 
 ## MUKERNAS IKAHIMATIKA 16
 Mukernas IKAHIMATIKA ke-16 dilaksanakan pada tahun 2020 dengan tuan rumah Himpunan Mahasiswa Matematika dan Sains Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA) Universitas Bengkulu.
-Pendaftaran peserta dilakukan secara online melalui website (https://mukernasikahimatika.my.id/)[https://mukernasikahimatika.my.id/]
+Pendaftaran peserta dilakukan secara online melalui website [https://mukernasikahimatika.my.id/](https://mukernasikahimatika.my.id/)
 
 Repo ini merupakan sistem informasi yang digunakan web tersebut.

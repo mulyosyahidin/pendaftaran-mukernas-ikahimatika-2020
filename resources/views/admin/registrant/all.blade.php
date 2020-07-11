@@ -58,6 +58,7 @@
         let table = $('#all-table').DataTable({
         "processing": true,
         "serverSide": false,
+        "order": [],
         "ajax": {
             "url": "{{ route('registrants-data.index') }}",
             "headers": {

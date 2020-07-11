@@ -18,10 +18,10 @@ class RegistrantController extends Controller
         $status = $request->status;
 
         if ($status && $status > 0) {
-            $registrants = Registrant::where('registration_status', $status)->get();
+            $registrants = Registrant::where('registration_status', $status)->orderBy('created_at', 'DESC')->get();
         }
         else {
-            $registrants = Registrant::all();
+            $registrants = Registrant::orderBy('created_at', 'DESC')->get();
         }
 
         $data = [];

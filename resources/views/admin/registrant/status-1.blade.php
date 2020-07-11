@@ -61,6 +61,7 @@
         let table = $('#to-verify-table').DataTable({
         "processing": true,
         "serverSide": false,
+        "order": [],
         "ajax": {
             "url": "{{ route('registrants-data.index') }}?status=1",
             "headers": {

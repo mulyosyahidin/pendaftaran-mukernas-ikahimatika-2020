@@ -61,6 +61,7 @@
         let table = $('#payment-table').DataTable({
         "processing": true,
         "serverSide": false,
+        "order": [],
         "ajax": {
             "url": "{{ route('registrants-data.index') }}?status=2",
             "headers": {
